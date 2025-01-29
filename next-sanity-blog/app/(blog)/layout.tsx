@@ -17,6 +17,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import Link from "next/link";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch({
@@ -84,18 +85,18 @@ export default async function RootLayout({
                     Thanks for Visiting
                   </h3>
                   <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                    <a
+                    <Link
                       href="/"
                       className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition"
                     >
                       Back to Home
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="https://github.com/vercel/next.js/tree/canary/examples/cms-sanity"
                       className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition"
                     >
                       View on GitHub
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
